@@ -3,7 +3,10 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'node:path';
 
+const base = process.env.BASE_PATH ?? '/';
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -16,7 +19,7 @@ export default defineConfig({
         theme_color: '#0f172a',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
+        start_url: base,
         icons: [
           {
             src: 'icon-192.svg',

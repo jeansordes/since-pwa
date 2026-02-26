@@ -11,10 +11,15 @@ Starter React + TypeScript + Vite avec:
 
 ```bash
 npm install
-cp .env.example .env
 npm run dev
 ```
 
 ## Supabase
 
-Mettez à jour `VITE_SUPABASE_URL` dans `.env` avec l'URL de votre projet.
+Les valeurs publiques sont définies par défaut dans `src/lib/supabase.ts`.
+Vous pouvez les ajuster directement dans ce fichier si besoin.
+
+## GitHub Pages
+
+Le déploiement se fait via GitHub Actions. Activez Pages dans les paramètres du repo
+et choisissez “GitHub Actions” comme source.
