@@ -11,7 +11,15 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: null,
       includeAssets: ['favicon.svg', 'icon-192.svg', 'icon-512.svg'],
+      workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
+        cleanupOutdatedCaches: true,
+        navigateFallback: 'index.html',
+        navigateFallbackAllowlist: [/^\//]
+      },
       manifest: {
         name: 'Since PWA',
         short_name: 'Since',
